@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GriyaDecor - Perabotan Rumah Tangga Modern</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="4.png">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Griya<span>Decor</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#katalog">Katalog</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" onclick="toggleCart()">
+            🛍️ <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Fungsional & Estetik<br>Untuk Rumah Anda</h1>
+            <p>Temukan koleksi perabotan pilihan untuk menciptakan kenyamanan maksimal di setiap sudut hunian.</p>
+            <a href="#katalog" class="btn-hero">Jelajahi Koleksi</a>
+        </div>
+    </section>
+
+    <section id="katalog" class="katalog-section">
+        <h2 class="section-title">Koleksi Perabotan</h2>
+        
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="filterKategori('semua', this)">Semua</button>
+            <button class="tab-btn" onclick="filterKategori('ruang-tamu', this)">Ruang Tamu</button>
+            <button class="tab-btn" onclick="filterKategori('dapur', this)">Dapur & Makan</button>
+        </div>
+
+        <div class="products-grid">
+            
+            <div class="product-card" data-kategori="ruang-tamu">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80" alt="Sofa Minimalis">
+                <div class="product-info">
+                    <span class="prod-cat">Ruang Tamu</span>
+                    <h3>Sofa Minimalis 2 Seater</h3>
+                    <p class="harga">Rp 2.450.000</p>
+                    <button class="btn-add-cart" onclick="tambahKeKeranjang('Sofa Minimalis 2 Seater', 2450000)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-kategori="dapur">
+                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=500&q=80" alt="Set Alat Masak">
+                <div class="product-info">
+                    <span class="prod-cat">Dapur & Makan</span>
+                    <h3>Set Alat Masak Granite</h3>
+                    <p class="harga">Rp 750.000</p>
+                    <button class="btn-add-cart" onclick="tambahKeKeranjang('Set Alat Masak Granite', 750000)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-kategori="ruang-tamu">
+                <img src="1.jpg" alt="Meja Samping Kayu">
+                <div class="product-info">
+                    <span class="prod-cat">Ruang Tamu</span>
+                    <h3>Meja Samping Kayu Jati</h3>
+                    <p class="harga">Rp 450.000</p>
+                    <button class="btn-add-cart" onclick="tambahKeKeranjang('Meja Samping Kayu Jati', 450000)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-kategori="dapur">
+                <img src="2.jpg" alt="Set Piring Keramik">
+                <div class="product-info">
+                    <span class="prod-cat">Dapur & Makan</span>
+                    <h3>Set Piring Keramik Estetik</h3>
+                    <p class="harga">Rp 280.000</p>
+                    <button class="btn-add-cart" onclick="tambahKeKeranjang('Set Piring Keramik', 280000)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-kategori="ruang-tamu">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80" alt="Sofa Minimalis">
+                <div class="product-info">
+                    <span class="prod-cat">Ruang Tamu</span>
+                    <h3>Sofa Minimalis 2 Seater</h3>
+                    <p class="harga">Rp 2.450.000</p>
+                    <button class="btn-add-cart" onclick="tambahKeKeranjang('Sofa Minimalis 2 Seater', 2450000)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-kategori="dapur">
+                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=500&q=80" alt="Set Alat Masak">
+                <div class="product-info">
+                    <span class="prod-cat">Dapur & Makan</span>
+                    <h3>Set Alat Masak Granite</h3>
+                    <p class="harga">Rp 750.000</p>
+                    <button class="btn-add-cart" onclick="tambahKeKeranjang('Set Alat Masak Granite', 750000)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-kategori="ruang-tamu">
+                <img src="1.jpg" alt="Meja Samping Kayu">
+                <div class="product-info">
+                    <span class="prod-cat">Ruang Tamu</span>
+                    <h3>Meja Samping Kayu Jati</h3>
+                    <p class="harga">Rp 450.000</p>
+                    <button class="btn-add-cart" onclick="tambahKeKeranjang('Meja Samping Kayu Jati', 450000)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-kategori="dapur">
+                <img src="2.jpg" alt="Set Piring Keramik">
+                <div class="product-info">
+                    <span class="prod-cat">Dapur & Makan</span>
+                    <h3>Set Piring Keramik Estetik</h3>
+                    <p class="harga">Rp 280.000</p>
+                    <button class="btn-add-cart" onclick="tambahKeKeranjang('Set Piring Keramik', 280000)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Keranjang Saya</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div id="cart-items" class="cart-items-container">
+            <p class="empty-text">Belum ada produk di keranjang.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-harga">
+                <span>Total:</span>
+                <span id="cart-total">Rp 0</span>
+            </div>
+            <button class="btn-checkout" onclick="checkoutWhatsApp()">Lanjut ke WhatsApp</button>
+        </div>
+    </div>
+
+    <section id="tentang-kami" class="about-section">
+        <div class="about-wrapper">
+            
+            <div class="about-visual scroll-reveal">
+                <div class="img-frame frame-large">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" alt="Interior Ruang Tamu GriyaDecor">
+                </div>
+                <div class="img-frame frame-small">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" alt="Detail Perabotan Estetik">
+                </div>
+                <div class="experience-badge">
+                    <h3>5+</h3>
+                    <p>Tahun Memperindah Hunian</p>
+                </div>
+            </div>
+
+            <div class="about-content scroll-reveal">
+                <span class="tagline">Cerita & Filosofi Kami</span>
+                <h2 class="section-heading">Mewujudkan Harmoni Antara Fungsi dan Estetika</h2>
+                
+                <p class="text-lead">
+                    Di GriyaDecor, kami percaya bahwa rumah bukan sekadar tempat bernaung, melainkan cerminan dari jiwa, kenyamanan, dan cerita setiap penghuninya.
+                </p>
+                
+                <p class="text-body">
+                    Didirikan sejak tahun 2021, kami mengawali langkah dengan satu misi sederhana: mengurasi perabotan rumah tangga berkualitas premium yang tidak hanya mengutamakan fungsi fungsional, tetapi juga memiliki nilai seni visual (*aesthetic value*). Setiap material kayu, rajutan kain, hingga detail terkecil dekorasi kami dipilih secara selektif untuk memastikan ia bertahan melintasi waktu.
+                </p>
+
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-icon">🪑</div>
+                        <div class="value-text">
+                            <h4>Desain Eksklusif</h4>
+                            <p>Koleksi furnitur yang dirancang minimalis, modern, dan timeless.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🌱</div>
+                        <div class="value-text">
+                            <h4>Bahan Berkelanjutan</h4>
+                            <p>Menggunakan material pilihan yang ramah lingkungan dan tahan lama.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 GriyaDecor. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
